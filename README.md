@@ -6,7 +6,7 @@
 
 > Bonne pratique: mets-toi un fichier .gitignore, parce que ça nous tente pas de ramasser ton node_modules au checkout.
 
-Au jour-le-jour, dépose dans ton répertoire ce que tu veux partager aux autres: code, examples, solutions, etc.
+Au jour-le-jour, dépose dans ton répertoire ce que tu veux partager aux autres: code, exemples, solutions, etc.
 
 Tu partages ce que tu veux. Pas besoin que ça compile.
 
