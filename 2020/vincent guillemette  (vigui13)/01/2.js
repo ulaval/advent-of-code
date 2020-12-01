@@ -203,18 +203,18 @@ const input = [,
     
 let solution;
 
-input.forEach((expense1, i1) => {
+input.forEach((e1, i1) => {
     copy1 = [...input];
     copy1.splice(i1, 1);
 
-    copy1.forEach((expense2, i2) => {
+    copy1.forEach((e2, i2) => {
         copy2 =  [...copy1];
         copy2.splice(i2, 1);
 
-        const expense3 = copy2.find(expense3 => (expense1 + expense2 + expense3 === 2020));
+        const e3 = copy2.find(e3 => (e1 + e2 + e3 === 2020));
 
-        if (expense3) {
-            solution =  expense1 * expense2 * expense3;
+        if (e3) {
+            solution =  e1 * e2 * e3;
             return false;
         }
     });
