@@ -1,4 +1,4 @@
-// https://github.com/simardo/adventofcode2020/blob/master/src/01/01.ts
+// https://github.com/simardo/adventofcode2020/tree/main/src/01
 
 console.log('1er décembre');
 
