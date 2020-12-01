@@ -201,20 +201,20 @@ const input = [,
 1821,
 ];
 
-const pair = [];
+let solution;
 
-input.forEach((i, index) => {
-    const inputCopy = [...input];
+input.forEach((e1, i1) => {
+    const copy = [...input];
     
-    inputCopy.splice(index, 1);
+    copy.splice(i1, 1);
     
-    const expense = inputCopy.find(i2 => i2 + i === 2020);
+    const e2 = copy.find(e2 => e1 + e2 === 2020);
 
-    if (expense) {
-        pair.push(expense);
+    if (e2) {
+        solution = e1 * e2;
         return false;
     }
 });
 
-console.log(pair[0] * pair[1])
+console.log(solution);
 
