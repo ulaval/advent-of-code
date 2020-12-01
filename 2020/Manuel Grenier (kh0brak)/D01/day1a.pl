@@ -5,13 +5,7 @@
 use strict;
 use warnings;
 
-#use Path::Tiny;
-use Data::Dump qw(dump);
-
-sub existDepense {
-		
-}
-
+#Charger l'input
 open(FILE, 'input.txt') or die;
 
 my %depenses;
@@ -23,5 +17,4 @@ while (<FILE>) {
 
 my @entries;
 map { $depenses{2020 - $_} ? push (@entries,$_) : undef } keys %depenses;
-
 print $entries[0] * $entries[1];

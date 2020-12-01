@@ -5,13 +5,8 @@
 use strict;
 use warnings;
 
-#use Path::Tiny;
-use Data::Dump qw(dump);
 
-sub existDepense {
-		
-}
-
+#Charger l'input
 open(FILE, 'input.txt') or die;
 
 my %depenses;
@@ -19,6 +14,7 @@ while (<FILE>) {
  chomp;
  $depenses{$_} = 1;
 }
+
 
 foreach my $depense1 (keys %depenses){
 	my @entries;
