@@ -1,0 +1,16 @@
+{
+  "name": "01",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "run": "ts-node puzzle.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^14.14.10",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.1.2"
+  }
+}
