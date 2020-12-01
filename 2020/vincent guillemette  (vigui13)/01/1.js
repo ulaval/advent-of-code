@@ -205,11 +205,14 @@ const pair = [];
 
 input.forEach((i, index) => {
     const inputCopy = [...input];
+    
     inputCopy.splice(index, 1);
+    
     const expense = inputCopy.find(i2 => i2 + i === 2020);
 
     if (expense) {
         pair.push(expense);
+        return false;
     }
 });
 

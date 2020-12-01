@@ -201,16 +201,27 @@ const input = [,
     1821,
     ];
     
-    
-input.forEach((expense1, index1, expenses) => {
-    expenses.forEach((expense2, index2, expenses2) => {
-        const expense3 = expenses2.find(expense3 => (expense1 + expense2 + expense3 === 2020));
+let solution;
 
-        if(expense3) {
-            console.log(expense1 * expense2 * expense3);
+input.forEach((expense1, i1) => {
+    copy1 = [...input];
+    copy1.splice(i1, 1);
+
+    copy1.forEach((expense2, i2) => {
+        copy2 =  [...copy1];
+        copy2.splice(i2, 1);
+
+        const expense3 = copy2.find(expense3 => (expense1 + expense2 + expense3 === 2020));
+
+        if (expense3) {
+            solution =  expense1 * expense2 * expense3;
+            return false;
         }
     });
-
+    
+    if (solution) {
+        return false;
+    }
 });
-    
-    
+
+console.log(solution);
