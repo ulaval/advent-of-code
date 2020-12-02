@@ -199,18 +199,29 @@ const input = [,
     1769,
     1691,
     1821,
-    ];
+];
     
-    
-input.forEach((expense1, index1, expenses) => {
-    expenses.forEach((expense2, index2, expenses2) => {
-        const expense3 = expenses2.find(expense3 => (expense1 + expense2 + expense3 === 2020));
+let solution;
 
-        if(expense3) {
-            console.log(expense1 * expense2 * expense3);
+input.forEach((e1, i1) => {
+    copy1 = [...input];
+    copy1.splice(i1, 1);
+
+    copy1.forEach((e2, i2) => {
+        copy2 =  [...copy1];
+        copy2.splice(i2, 1);
+
+        const e3 = copy2.find(e3 => (e1 + e2 + e3 === 2020));
+
+        if (e3) {
+            solution =  e1 * e2 * e3;
+            return false;
         }
     });
-
+    
+    if (solution) {
+        return false;
+    }
 });
-    
-    
+
+console.log(solution);
