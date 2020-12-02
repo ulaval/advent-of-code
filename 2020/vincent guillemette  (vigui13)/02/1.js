@@ -2,7 +2,7 @@ const input = require('./1-input.js');
 
 let solution = 0;
 
-input.filter(i => {
+input.forEach(i => {
     const parts = i.split(' ');
     const min = parseFloat(parts[0].split('-')[0]);
     const max = parseFloat(parts[0].split('-')[1]);

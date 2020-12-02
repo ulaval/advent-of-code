@@ -6,7 +6,7 @@ const XOR = (a,b)  => {
 
 let solution = 0;
 
-input.filter(i => {
+input.forEach(i => {
     const parts = i.split(' ');
     const pos1 = parseFloat(parts[0].split('-')[0]);
     const pos2 = parseFloat(parts[0].split('-')[1]);
