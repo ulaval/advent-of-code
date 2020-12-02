@@ -199,7 +199,7 @@ const input = [,
     1769,
     1691,
     1821,
-    ];
+];
     
 let solution;
 
