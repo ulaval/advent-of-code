@@ -2,7 +2,6 @@ package advent.of.code.isauc4;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import advent.of.code.isauc4.utils.LecteurFichier;
 
@@ -15,8 +14,7 @@ public class Day1 {
 
     private static Integer part1() throws IOException {
 
-        List<String> temp = LecteurFichier.getCollection("inputDay1.txt");
-        List<Integer> notes = temp.stream().map(t -> Integer.valueOf(t)).collect(Collectors.toList());
+        List<Integer> notes = LecteurFichier.getCollectionInteger("inputDay1.txt");
 
         for (int i = 0; i < notes.size(); i++) {
             for (int ii = i + 1; ii < notes.size(); ii++) {
@@ -30,8 +28,7 @@ public class Day1 {
 
     private static Integer part2() throws IOException {
 
-        List<String> temp = LecteurFichier.getCollection("inputDay1.txt");
-        List<Integer> notes = temp.stream().map(t -> Integer.valueOf(t)).collect(Collectors.toList());
+        List<Integer> notes = LecteurFichier.getCollectionInteger("inputDay1.txt");
 
         for (int i = 0; i < notes.size(); i++) {
             for (int ii = i + 1; ii < notes.size(); ii++) {

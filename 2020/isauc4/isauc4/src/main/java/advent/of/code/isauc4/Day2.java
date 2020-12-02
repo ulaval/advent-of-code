@@ -10,8 +10,8 @@ import advent.of.code.isauc4.utils.LecteurFichier;
 public class Day2 {
 
     public static void main(String[] args) throws IOException {
-        System.out.println(part1());
-        System.out.println(part2());
+        System.out.println("Part #1 " + part1());
+        System.out.println("Part #2 " + part2());
     }
 
     private static int part1() throws IOException {
