@@ -1,3 +1,3 @@
-const input = [];
+const input = '';
 
 module.exports = input;
