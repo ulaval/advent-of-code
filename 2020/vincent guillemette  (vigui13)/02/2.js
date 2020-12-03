@@ -1,12 +1,12 @@
 const input = require('./1-input.js');
 
-const XOR = (a,b)  => {
-    return ( a || b ) && !( a && b );
-}
+const XOR = (a, b) => {
+    return (a || b) && !(a && b);
+};
 
 let solution = 0;
 
-input.forEach(i => {
+input.forEach((i) => {
     const parts = i.split(' ');
     const pos1 = parseFloat(parts[0].split('-')[0]);
     const pos2 = parseFloat(parts[0].split('-')[1]);
