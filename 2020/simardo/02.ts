@@ -39,16 +39,8 @@ function doPart2(input: string): void {
         const char: string = match[3];
         const pwd: string = match[4];
 
-        let count: number = 0;
-        if (pwd[idx1-1] === char) {
-            count++;
-        }
-        if (pwd[idx2-1] === char) {
-            count++;
-        }
-
-        if (count === 1) {
-            valid++
+        if ((pwd[idx1-1] === char) !== (pwd[idx2-1] === char)) {
+            valid++;
         }
     }
 
