@@ -31,6 +31,7 @@ console.log(
     slops.reduce((acc, cur) => {
         pos.x = 0;
         pos.y = 0;
+
         acc *= map.reduce((acc) => {
             pos.x = (pos.x + cur.x) % map[0].length;
             pos.y += cur.y * -1;
