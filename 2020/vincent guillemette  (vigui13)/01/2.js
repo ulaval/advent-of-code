@@ -1,4 +1,4 @@
-const input = [,
+const input = [
     1772,
     1065,
     1827,
@@ -200,7 +200,7 @@ const input = [,
     1691,
     1821,
 ];
-    
+
 let solution;
 
 input.forEach((e1, i1) => {
@@ -208,17 +208,17 @@ input.forEach((e1, i1) => {
     copy1.splice(i1, 1);
 
     copy1.forEach((e2, i2) => {
-        copy2 =  [...copy1];
+        copy2 = [...copy1];
         copy2.splice(i2, 1);
 
-        const e3 = copy2.find(e3 => (e1 + e2 + e3 === 2020));
+        const e3 = copy2.find((e3) => e1 + e2 + e3 === 2020);
 
         if (e3) {
-            solution =  e1 * e2 * e3;
+            solution = e1 * e2 * e3;
             return false;
         }
     });
-    
+
     if (solution) {
         return false;
     }

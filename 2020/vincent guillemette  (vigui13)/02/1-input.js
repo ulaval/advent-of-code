@@ -998,7 +998,7 @@ const input = [
     '3-6 h: hdhjhhhhchh',
     '11-12 r: zrrkcrrrrrlh',
     '7-9 v: vhqvlvwvzqwqvrxvjnf',
-    '1-5 r: rvmjr'
+    '1-5 r: rvmjr',
 ];
 
 module.exports = input;
