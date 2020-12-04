@@ -1,6 +1,5 @@
 const fs = require('fs');
 const readline = require('readline');
-const { indexOf } = require('../../03/star-2/2-input');
 
 const readInterface = readline.createInterface({
     input: fs.createReadStream('./input.txt'),
