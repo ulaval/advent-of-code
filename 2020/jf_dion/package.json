@@ -1,0 +1,11 @@
+{
+  "name": "jf_dion",
+  "version": "1.0.0",
+  "description": "advent of code 2020",
+  "dependencies": {
+    "@types/node": "14.14.10"
+  },
+  "devDependencies": {},
+  "author": "Jean-Francois Dion <jeff.dion@gmail.com",
+  "license": "MIT"
+}
