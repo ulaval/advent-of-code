@@ -1,8 +1,8 @@
 const input = require('./input.js');
 
-let solution = 0;
+const ids = [];
 
-input.forEach((i, index) => {
+input.map((i) => {
     i = i.split('');
 
     const rowChars = i.slice(0, 7);
@@ -40,10 +40,13 @@ input.forEach((i, index) => {
         }
     });
 
-    solution =
-        rowSpan.lowerBound * 8 + colSpan.lowerBound > solution
-            ? rowSpan.lowerBound * 8 + colSpan.lowerBound
-            : solution;
+    if (rowSpan.lowerBound === 0 || rowSpan.lowerBound === 127) {
+        return;
+    }
+
+    ids.push(rowSpan.lowerBound * 8 + colSpan.lowerBound);
 });
 
-console.log(solution);
+ids.sort((a, b) => (a > b ? 1 : a < b ? -1 : 0));
+
+console.log(ids.find((id, index) => ids[index + 1] !== id + 1) + 1);
