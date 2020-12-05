@@ -1,5 +1,5 @@
 # Forum
-> Je fais un test. Laissez ici vos commentaires généraux si ça vous tente. Editez directement dans Github. Ajoutez vos commentaires au début (plus récents en premier).
+> Je fais un test. Laissez ici vos commentaires généraux si ça vous tente. Editez directement dans Github. Ajoutez vos commentaires au début (plus récents en premier). N'oubliez pas que votre commentaire est toujours visible à la planète entière!
 
 ### Juste pour les commentaires laissés par Charles ça vaut la peine de passer ici une fois par jour
 ![Alt Text](https://media4.giphy.com/media/CaiVJuZGvR8HK/giphy.gif)
