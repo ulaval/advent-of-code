@@ -20,6 +20,17 @@ for my $x ( min(@seatIDs) ..  max(@seatIDs)){
 	print $x if ( ! grep {$_ == $x} @seatIDs);
 }
 
+my @sieges;
+foreach (@inputs){
+	$sieges[calcRow( split //, substr($_, 0, 7) )][calcCol( split //, substr($_, -3) )] = "[]";
+}
+for my $x ( 0.. 127 ){
+	print "Rangee $x : ";
+	for my $y ( 0.. 7 ){
+			print $sieges[$x][$y]? $sieges[$x][$y] : "  " ;
+	}
+	print "\n";
+}
 
 
 
