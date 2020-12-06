@@ -3,7 +3,7 @@
 
 ### Manuel, je trouvais cool ton plan d'avion, mais j'ai trouvé encore plus [geek ici](https://www.youtube.com/watch?v=8mTtyTMRHsM&feature=youtu.be&ab_channel=Phil%21Gold) - simardo
 
-### Lire du Pearl c'est comme lire un poeme! --chuckmah
+### Lire du Perl c'est comme lire un poeme! --chuckmah
 
 C'est vraiment cool de voir le taux de participation cette année... je vais essayer de rester dans le course le plus longtemps possible!! -vigui13
 
