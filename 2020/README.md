@@ -5,8 +5,6 @@
 
 ### Lire du Perl c'est comme lire un poeme! --chuckmah
 
-C'est vraiment cool de voir le taux de participation cette année... je vais essayer de rester dans le course le plus longtemps possible!! -vigui13
-
 ### Juste pour les commentaires laissés par Charles ça vaut la peine de passer ici une fois par jour
 ![Alt Text](https://media4.giphy.com/media/CaiVJuZGvR8HK/giphy.gif)
 
