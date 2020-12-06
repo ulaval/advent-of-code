@@ -1,6 +1,8 @@
 # Forum
 > Je fais un test. Laissez ici vos commentaires généraux si ça vous tente. Editez directement dans Github. Ajoutez vos commentaires au début (plus récents en premier).
 
+### Lire du Pearl c'est comme lire un poeme! --chuckmah 
+
 ### Juste pour les commentaires laissés par Charles ça vaut la peine de passer ici une fois par jour
 ![Alt Text](https://media4.giphy.com/media/CaiVJuZGvR8HK/giphy.gif)
 
