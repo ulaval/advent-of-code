@@ -1,6 +1,8 @@
 # Forum
 > Je fais un test. Laissez ici vos commentaires généraux si ça vous tente. Editez directement dans Github. Ajoutez vos commentaires au début (plus récents en premier).
 
+### Martin spoil pas dans tes nom de commits LOL --vigui13
+
 ### j'ai eu un gros brain freeze sur le jour 6, sur papier c'était simple mais j'ai rushé pour les algos --vigui13
 
 ### ayoye c'est tellement bien fait l'animation de l'avion!! --vigui13
