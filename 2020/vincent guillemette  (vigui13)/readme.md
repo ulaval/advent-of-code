@@ -1,4 +1,4 @@
-## Ensemble on peut vaincre Martin
+## Ensemble on peut vaincre Max
 
 ### Vous pouvez commenter mon code (astuces, bons/mauvais coups) dans les fichiers .txt associés au puzzle de la journée!!
 
