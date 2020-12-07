@@ -1,5 +1,9 @@
 # Forum
-> Je fais un test. Laissez ici vos commentaires généraux si ça vous tente. Editez directement dans Github. Ajoutez vos commentaires au début (plus récents en premier).
+> Laissez ici vos commentaires généraux si ça vous tente. Editez directement dans Github. Ajoutez vos commentaires au début (plus récents en premier).
+
+### Quand les regex (aussi simples soient-elles) te causent plus de maux tête que la récursion... --simardo
+
+### Ouais la moitié de mon temps passe à trouver la Regex qui fait tout d'un coup et la plupart du temps abandonner... --Manu
 
 ### j'ai eu un gros brain freeze sur le jour 6, sur papier c'était simple mais j'ai rushé pour les algos --vigui13
 
