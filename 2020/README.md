@@ -3,6 +3,8 @@
 
 ### Quand les regex (aussi simples soient-elles) te causent plus de maux tête que la récursion... --simardo
 
+### Ouais la moitié de mon temps passe à trouver la Regex qui fait tout d'un coup et la plupart du temps abandonner... --Manu
+
 ### j'ai eu un gros brain freeze sur le jour 6, sur papier c'était simple mais j'ai rushé pour les algos --vigui13
 
 ### ayoye c'est tellement bien fait l'animation de l'avion!! --vigui13
