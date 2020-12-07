@@ -31,15 +31,4 @@ readInterface
                 };
             });
     })
-    .on('close', () => {
-        const target = 'shiny gold bag';
-        let total = 1;
-
-        total *= rules[target].reduce((acc, cur) => {
-            acc += cur.qty;
-            return acc;
-        }, 0);
-
-        console.log(rules);
-        console.log(total);
-    });
+    .on('close', () => {});
