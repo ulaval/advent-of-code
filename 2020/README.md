@@ -1,7 +1,7 @@
 # Forum
 > Laissez ici vos commentaires généraux si ça vous tente. Editez directement dans Github. Ajoutez vos commentaires au début (plus récents en premier).
 
-### mon premier give up, day 7 puzzle 2 .... j'y arrive juste pas, je comprends pas trop ce uqe je dois faire en fait 
+### mon premier give up, day 7 puzzle 2 .... j'y arrive juste pas, je comprends pas trop ce que je dois faire en fait --vigui13 
 
 ### Quand les regex (aussi simples soient-elles) te causent plus de maux tête que la récursion... --simardo
 
