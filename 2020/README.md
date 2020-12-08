@@ -3,6 +3,8 @@
 
 ### 
 
+LOL --vigui13
+
 ![Alt Text](https://i.imgur.com/drehjLW.png) --pobie
 
 ### j'ai FINALEMENT eu day 7 star 2, vraiment c'était plus simple que je pensais... anyway, im back --vigui13
