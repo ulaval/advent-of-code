@@ -1,7 +1,7 @@
 # Forum
 > Laissez ici vos commentaires généraux si ça vous tente. Editez directement dans Github. Ajoutez vos commentaires au début (plus récents en premier).
 
-### Voir ce nouvel [onglet offert par Github](https://github.com/ulaval/advent-of-code/discussions/) depuis aujourd'hui.
+### :microphone: Voir ce nouvel [onglet offert par Github](https://github.com/ulaval/advent-of-code/discussions/) depuis aujourd'hui.
 
 ### ok après reconsidération c'était évident en fait --vigui13
 
