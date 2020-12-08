@@ -3,6 +3,8 @@
 
 ### 
 
+### je pense que le dessin qui se forme de jour en jour sur la page des questions c'est une map avec un itinéraire de l'avion, et quand y'a une ville y'a des questions d'aeroport sinon de vol
+
 LOL --vigui13
 
 ![Alt Text](https://i.imgur.com/drehjLW.png) --pobie
