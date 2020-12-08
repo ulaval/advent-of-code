@@ -1,3 +1,3 @@
 ## Ensemble on peut vaincre Max
 
-### bienvnue dans code spaghettie town
+### bienvenue dans code spaghettie town
