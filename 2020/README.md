@@ -2,6 +2,9 @@
 > Laissez ici vos commentaires généraux si ça vous tente. Editez directement dans Github. Ajoutez vos commentaires au début (plus récents en premier).
 
 ####
+
+### j'ai FINALEMENT eu day 7 star 2, vraiment c'était plus simple que je pensais... anyway, im back --vigui13
+
 Day 7 expliqué par [Bob l'éponge](https://www.reddit.com/r/adventofcode/comments/k8ipv4/day_7_be_like/?utm_source=share&utm_medium=web2x&context=3) (tel que vu sur reddit) -- simardo
 
 #### mon premier give up, day 7 puzzle 2 .... j'y arrive juste pas, je comprends pas trop ce que je dois faire en fait --vigui13 
