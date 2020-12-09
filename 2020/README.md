@@ -1,7 +1,13 @@
 # Forum
 > Laissez ici vos commentaires généraux si ça vous tente. Editez directement dans Github. Ajoutez vos commentaires au début (plus récents en premier).
 
-### 
+### :microphone: Voir ce nouvel [onglet offert par Github](https://github.com/ulaval/advent-of-code/discussions/) depuis aujourd'hui.
+
+### ok après reconsidération c'était évident en fait --vigui13
+
+### je pense que le dessin qui se forme de jour en jour sur la page des questions c'est une map avec un itinéraire de l'avion, et quand y'a une ville y'a des questions d'aeroport sinon de vol --vigui13
+
+LOL --vigui13
 
 ![Alt Text](https://i.imgur.com/drehjLW.png) --pobie
 
