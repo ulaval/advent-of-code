@@ -1,3 +1,5 @@
+// https://github.com/simardo/adventofcode2020/tree/main/src/09
+
 console.log('9 décembre');
 
 // part 1
