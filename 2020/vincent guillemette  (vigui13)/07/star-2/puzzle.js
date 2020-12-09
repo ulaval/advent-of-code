@@ -2,9 +2,10 @@ const { group, groupCollapsed } = require('console');
 const { createCipher } = require('crypto');
 const fs = require('fs');
 const readline = require('readline');
+const path = require('path');
 
 const readInterface = readline.createInterface({
-    input: fs.createReadStream('./input.txt'),
+    input: fs.createReadStream(path.join(__dirname, 'input.txt')),
 });
 
 let rules = {};
@@ -31,4 +32,30 @@ readInterface
                 };
             });
     })
-    .on('close', () => {});
+    .on('close', () => {
+        const target = 'shiny gold bag';
+        let solution = 0;
+
+        const solve = (target, parentQty) => {
+            if (!target) return;
+
+            const childSum = rules[target].reduce(
+                (acc, cur) => ((acc += cur.qty), acc),
+                0
+            );
+
+            if (childSum) {
+                solution += parentQty * childSum;
+            } else {
+                return;
+            }
+
+            rules[target].forEach((t) => {
+                solve(t.childType, t.qty * parentQty);
+            });
+        };
+
+        solve(target, 1);
+
+        console.log(solution);
+    });
