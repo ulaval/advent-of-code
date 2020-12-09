@@ -15,7 +15,7 @@ int runCode(std::vector<std::pair<std::string, std::string> >&instructions)
 
             while(true)
             {
-                if (find(usedOp.begin(), usedOp.end(), currentOP) != usedOp.end())
+                if (find(usedOp.begin(), usedOp.end(), currentOP) != usedOp.end() || currentOP>= instructions.size())
                     break;
                 else
                     usedOp.push_back(currentOP);

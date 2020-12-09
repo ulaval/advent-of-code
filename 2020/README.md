@@ -1,7 +1,18 @@
 # Forum
 > Laissez ici vos commentaires généraux si ça vous tente. Editez directement dans Github. Ajoutez vos commentaires au début (plus récents en premier).
 
-####
+### :microphone: Voir ce nouvel [onglet offert par Github](https://github.com/ulaval/advent-of-code/discussions/) depuis aujourd'hui.
+
+### ok après reconsidération c'était évident en fait --vigui13
+
+### je pense que le dessin qui se forme de jour en jour sur la page des questions c'est une map avec un itinéraire de l'avion, et quand y'a une ville y'a des questions d'aeroport sinon de vol --vigui13
+
+LOL --vigui13
+
+![Alt Text](https://i.imgur.com/drehjLW.png) --pobie
+
+### j'ai FINALEMENT eu day 7 star 2, vraiment c'était plus simple que je pensais... anyway, im back --vigui13
+
 Day 7 expliqué par [Bob l'éponge](https://www.reddit.com/r/adventofcode/comments/k8ipv4/day_7_be_like/?utm_source=share&utm_medium=web2x&context=3) (tel que vu sur reddit) -- simardo
 
 #### mon premier give up, day 7 puzzle 2 .... j'y arrive juste pas, je comprends pas trop ce que je dois faire en fait --vigui13 
