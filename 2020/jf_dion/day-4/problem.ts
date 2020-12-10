@@ -1,5 +1,4 @@
 import fs from 'fs';
-import { parse } from 'path';
 
 const passports: Map<string, string>[] = fs.readFileSync(__dirname + '/data-4.txt', 'utf8').split('\n\n')
     .map((passport: string): [string, string][] => replaceAll(passport, '\n', ' ').split(' ')
