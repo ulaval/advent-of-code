@@ -22,7 +22,7 @@ readInterface
         );
         let test = 0;
 
-        const solve = (paths, currentCharge = adaptersJoltages[0]) => {
+        const solve = (currentCharge = adaptersJoltages[0]) => {
             if (
                 currentCharge === adaptersJoltages[adaptersJoltages.length - 1]
             ) {
@@ -36,19 +36,14 @@ readInterface
                         adaptersJoltages.find((j) => j > currentCharge)
                     )
                 )
-                .reduce((acc, cur) => {
-                    if (cur - currentCharge <= 3) {
-                        acc[cur] = {};
-                        solve(acc[cur], cur);
+                .forEach((j) => {
+                    if (j - currentCharge <= 3) {
+                        solve(j);
                     }
-
-                    return acc;
-                }, paths);
+                });
         };
 
-        const paths = {};
-
-        solve(paths);
+        solve();
 
         console.log(test);
     });
