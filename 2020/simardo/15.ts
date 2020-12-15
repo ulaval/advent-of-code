@@ -5,20 +5,16 @@ console.log('15 décembre');
 // part 1&2
 function doPart12(numbers: number[], turns: number): void {
     const history: { [key: number]: number } = {};
-    let turn: number = 0;
-    let last: number;
 
     numbers.slice(0, numbers.length - 1).forEach((n, i) => {
         history[n] = i + 1;
     });
 
-    last = numbers[numbers.length - 1];
-    turn = numbers.length;
+    let last: number = numbers[numbers.length - 1];
+    let turn: number = numbers.length;
 
     let spoken: number;
-    while (turn < turns) {
-        turn++;
-
+    while (turn++ < turns) {
         let h: number | undefined = history[last];
 
         if (h === undefined) {
