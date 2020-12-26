@@ -48,6 +48,7 @@ constexpr std::pair<long long, long long> find_t(arr_cit ind_begin, arr_cit ind_
     throw "not found!";
 }
 
+/* uncomment to build this version (and comment the other main)
 int main(int argc, char* argv[])
 {
     // Part 2
@@ -57,3 +58,4 @@ int main(int argc, char* argv[])
     constexpr auto result = find_t(indices.cbegin(), indices.cend(), bus_ids.cbegin(), bus_ids.cend());
     std::cout << "Part 2 answer = " << result.first << '\n';
 }
+*/
