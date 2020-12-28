@@ -2,143 +2,118 @@
 
 #include "CupList.h"
 
-CupList::CupList(const std::string& list, bool to_one_million)
-    : _list{}, current{0}, picked_up{-1}, destination{-1}, min_label{max_cups}, max_label{0}, max_cups{(to_one_million) ? 1'000'000 : 9}
+CupList::CupList(const std::string& list, int max_label)
+    : _cup{}, _min{1}, _max{1}, _current{0}, _initial{0}, _picked{0}
 {
-    int i = 0;
-    for (const auto ch : list) {
-        const auto label = ch-'0';
-        min_label = std::min(min_label, label);
-        max_label = std::max(max_label, label);
-        Cup c{ this, label, wrap(i+1), wrap(i-1) };
-        _list.push_back(c);
-        i++;
+    auto list_size = static_cast<int>(list.size());
+    if (max_label == 0)
+        max_label = list_size;
+    _max = max_label;
+    _cup.resize(max_label+1);
+
+    auto label = list[0]-'0';
+    auto prev = label;
+    _initial = label;
+    _current = label;
+    for (int i=1; i<list.size(); i++) {
+        label = list[i]-'0';
+        _cup[label].prev = prev;
+        _cup[prev].next = label;
+        prev = label;
     }
-    if (to_one_million) {
-        _list.reserve(1'000'000);
-        for (int x = max_label; x < 1'000'000; x++) {
-            Cup c{ this, x+1, wrap(x+1), wrap(x-1) };
-            _list.push_back(c);
+    _cup[label].next = _current;
+    _cup[_current].prev = label;
+
+    if (max_label > list.size()) {
+        for (int i=list_size+1; i <= max_label; i++) {
+            _cup[i].prev = prev;
+            _cup[prev].next = i;
+            prev = i;
         }
-        max_label = 1'000'000;
+        _cup[max_label].next = _current;
+        _cup[_current].prev = max_label;
     }
 }
 
-int CupList::next(int from, int n) const
+int CupList::wrap(int label) const
 {
-    assert(from >= 0 && from < max_cups);
-    int index = from;
+    if (label < _min)
+        label = _max;
+    if (label > _max)
+        label = _min;
+    return label;
+}
+
+int CupList::prev(int label, int n) const
+{
     while (n--)
-        index = _list[index].next_index;
-    return index;
+        label = _cup[label].prev;
+    return label;
 }
 
-int CupList::prev(int from, int n) const
+int CupList::next(int label, int n) const
 {
-    assert(from >= 0 && from < max_cups);
-    int index = from;
     while (n--)
-        index = _list[index].prev_index;
-    return index;
+        label = _cup[label].next;
+    return label;
 }
 
-void CupList::pick_up()
+bool CupList::is_picked_up(int label) const
 {
-    assert(picked_up == -1);
-    picked_up = _list[current].next_index;
-    auto after = next(current, 4);
-    _list[current].next_index = after;
-    _list[after].prev_index = current;
-#ifndef NDEBUG
-    std::cout << "pick up: ";
-    print_list(std::cout, picked_up, 3);
-    std::cout << '\n';
-#endif
-}
-
-void CupList::put_back()
-{
-    assert(picked_up != -1);
-    assert(destination != -1);
-    auto after = _list[destination].next_index;
-    _list[destination].next_index = picked_up;
-    _list[picked_up].prev_index = destination;
-    _list[next(picked_up, 2)].next_index = after;
-    _list[after].prev_index = next(picked_up, 2);
-    destination = -1;
-    picked_up = -1;
-}
-
-// try to find label beginning at current and skipping picked up cups and return index (or -1 if not found)
-int CupList::find(int label) const
-{
-    if (_list[current].label == label)
-        return current;
-
-    for (int i = next(current); i != current; i = next(i)) {
-        if (_list[i].label == label)
-            return i;
-    }
-    return -1;
-}
-
-void CupList::select_dest()
-{
-    assert(destination == -1);
-    auto target = _list[current].label - 1;
-    destination = find(target);
-    while (destination == -1) {
-        target--;
-        if (target < min_label)
-            target = max_label;
-        destination = find(target);
-    }
-#ifndef NDEBUG
-    std::cout << "destination: " << _list[destination].label << '\n';
-#endif
+    assert(_picked != 0);
+    if (label == _picked || label == next(_picked) || label == next(_picked, 2))
+        return true;
+    return false;
 }
 
 void CupList::move()
 {
-    pick_up();
-    select_dest();
-    put_back();
-    current = next(current);
+    // pick up three
+    _picked = next(_current);
+    auto after = next(_picked, 3);
+    _cup[_current].next = after;
+    _cup[after].prev = _current;
+
+    // select destination
+    int destination = wrap(_current-1);
+    while (is_picked_up(destination)) {
+        destination = wrap(destination-1);
+    }
+
+    // put back
+    auto last_picked_up = next(_picked, 2);
+    after = _cup[destination].next;
+    _cup[destination].next = _picked;
+    _cup[_picked].prev = destination;
+    _cup[last_picked_up].next = after;
+    _cup[after].prev = last_picked_up;
+
+    // new current cup
+    _current = next(_current);
 }
 
-constexpr int CupList::wrap(int index)
+void CupList::print_helper(std::ostream& out, int label) const
 {
-    if (index < 0) {
-        return max_cups + index;
-    }
-    if (index >= max_cups) {
-        return index - max_cups;
-    }
-    return index;
-}
-
-void CupList::print_helper(std::ostream& out, int index) const
-{
-    if (index == current)
+    if (label == _current)
         out << '(';
-    out << _list[index].label;
-    if (index == current)
+    out << label;
+    if (label == _current)
         out << ')';
     out << ' ';
 }
 
-// print count cups begining at from (or all of them if count == 0)
-void CupList::print_list(std::ostream& out, int from, int count) const
+// prints count (or all if count=0) cups starting at start (or initial if start=0)
+void CupList::print_list(std::ostream& out, int start, int count) const
 {
-    print_helper(out, from);
-    for (int i = _list[from].next_index; i != from && --count != 0; i = _list[i].next_index) {
-        print_helper(out, i);
+    start = (start == 0) ? _initial : start;
+    print_helper(out, start);
+    for (int label = _cup[start].next; label != start && --count != 0; label = _cup[label].next) {
+        print_helper(out, label);
     }
 }
 
 std::ostream& operator<<(std::ostream& out, const CupList& rhs)
 {
-    out << "cups: ";
     rhs.print_list(out, 0);
     return out;
 }

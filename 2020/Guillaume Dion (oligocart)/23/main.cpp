@@ -13,6 +13,7 @@
 int main(int argc, char* argv[])
 {
     const std::string input{"789465123"};
+    // const std::string input{"389125467"};       // example
 
     // Part 1
     CupList cups{input};
@@ -24,11 +25,17 @@ int main(int argc, char* argv[])
     }
     std::cout << cups << '\n';
     std::ostringstream oss;
-    cups.print_list(oss, cups.next(cups.find(1)), 8);
+    cups.print_list(oss, cups.next(1), 8);
     std::cout << "Part 1 answer = " << oss.str() << std::endl;
 
     // Part 2
-    CupList mcups{input, true};
+    CupList mcups{input, 1'000'000};
+    for (int i = 1; i <= 10'000'000; i++) {
+        mcups.move();
+    }
+    std::ostringstream oss2;
+    mcups.print_list(oss2, mcups.next(1), 2);
+    std::cout << "Part 2 answer = " << oss2.str() << std::endl;
 
     return 0;
 }
