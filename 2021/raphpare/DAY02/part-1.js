@@ -1,4 +1,4 @@
-const day01 = (async() => {
+const day01P1 = (async() => {
     const response = await fetch('data.txt');
     const text = await response.text();
     const positions = text.split('\r\n').map(t => t.split(' ').map((p, i) => i === 1 ? parseInt(p): p));
@@ -21,11 +21,15 @@ const day01 = (async() => {
 
     console.log(horizontalAndDepthPosition[2]);
 
+    const refBody = document.body;
+    const reH2 = document.createElement('h2');
     const refUl = document.createElement('ul');
+    reH2.innerText = 'Part 1';
     refUl.innerHTML = (
         `<li><strong>Horizontal position: </strong> ${horizontalAndDepthPosition[0]}</li>
          <li><strong>Depth position: </strong> ${horizontalAndDepthPosition[1]}</li>
          <li><strong>Multiplication (horizontal * depth): </strong> ${horizontalAndDepthPosition[2]}</li>`
     );
-    document.documentElement.append(refUl);
+    refBody.append(reH2);
+    refBody.append(refUl);
 })();
