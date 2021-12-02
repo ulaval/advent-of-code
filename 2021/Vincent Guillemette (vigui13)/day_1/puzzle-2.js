@@ -1,6 +1,6 @@
-const inputConverter = require('../input-converter');
+const convertInput = require('../input-converter');
 
-inputConverter(__dirname, parseInt).then((depths) => {
+convertInput(__dirname, parseInt).then((depths) => {
     function computeWindows(windows = [], i = 0) {
         const remainer = depths.slice(i);
 

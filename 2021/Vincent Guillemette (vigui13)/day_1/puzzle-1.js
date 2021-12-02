@@ -1,6 +1,6 @@
-const inputConverter = require('../input-converter');
+const convertInput = require('../input-converter');
 
-inputConverter(__dirname, parseInt).then((depths) => {
+convertInput(__dirname, parseInt).then((depths) => {
     const increaseCount = depths.filter((d, i, a) => {
         return !!i && d > a[i - 1];
     }).length;
