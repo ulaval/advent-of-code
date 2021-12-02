@@ -1,5 +1,5 @@
 const day01 = (async() => {
-    const response = await fetch('data.text');
+    const response = await fetch('data.txt');
     const text = await response.text();
     const sonarSweeps = text.split('\r\n').map(t => parseInt(t));
     
