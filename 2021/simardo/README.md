@@ -1,1 +1,0 @@
-## On se revoit le 1er décembre!
