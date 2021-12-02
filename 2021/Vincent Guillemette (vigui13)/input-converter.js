@@ -1,0 +1,19 @@
+const readline = require('readline');
+const path = require('path');
+const fs = require('fs');
+
+const convertInput = (inputDir, converter = (x) => x) => {
+    return new Promise((res) => {
+        const readInterface = readline.createInterface({
+            input: fs.createReadStream(path.join(inputDir, 'input.txt')),
+        });
+
+        const input = [];
+
+        readInterface
+            .on('line', (line) => input.push(converter(line)))
+            .on('close', () => res(input));
+    });
+};
+
+module.exports = convertInput;
