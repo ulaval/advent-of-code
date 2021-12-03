@@ -18,7 +18,7 @@ const day01P2 = (async() => {
         }
         acc.multiplication = acc.horizontal * acc.depth;
         return acc;
-    }, {'horizontal' : 0, 'depth': 0, 'aim': 0, 'multiplication': 0});
+    }, { horizontal : 0, depth: 0, aim: 0, multiplication: 0 });
 
     console.log(positions.multiplication);
 
