@@ -1,4 +1,4 @@
-const day01P1 = (async() => {
+const day02P1 = (async() => {
     const response = await fetch('data.txt');
     const text = await response.text();
     const positions = text.split('\r\n').map(t => t.split(' ').map((p, i) => i === 1 ? parseInt(p): p));

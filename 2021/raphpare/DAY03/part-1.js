@@ -1,6 +1,6 @@
 import { printResults } from "./print-results.js";
 
-const day01P1 = (async() => {
+(async() => {
     const response = await fetch('data.txt');
     const text = await response.text();
     const binaryNumbers = text.split('\r\n');
