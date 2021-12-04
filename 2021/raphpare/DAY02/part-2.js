@@ -1,4 +1,4 @@
-const day01P2 = (async() => {
+const day02P2 = (async() => {
     const response = await fetch('data.txt');
     const text = await response.text();
     const dataPositions = text.split('\r\n').map(t => t.split(' ').map((p, i) => i === 1 ? parseInt(p): p));
@@ -18,7 +18,7 @@ const day01P2 = (async() => {
         }
         acc.multiplication = acc.horizontal * acc.depth;
         return acc;
-    }, {'horizontal' : 0, 'depth': 0, 'aim': 0, 'multiplication': 0});
+    }, { horizontal : 0, depth: 0, aim: 0, multiplication: 0 });
 
     console.log(positions.multiplication);
 
