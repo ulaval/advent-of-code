@@ -57,8 +57,6 @@ convertInput(__dirname).then((bingo) => {
         .filter((w) => !!w)
         .pop();
 
-    console.log(lastWinner);
-
     const unmarkedSum = lastWinner.card.rows.reduce(
         (accRow, curRow) => (
             console.log(curRow),
