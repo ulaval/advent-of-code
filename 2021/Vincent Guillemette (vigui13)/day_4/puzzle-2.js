@@ -58,14 +58,12 @@ convertInput(__dirname).then((bingo) => {
         .pop();
 
     const unmarkedSum = lastWinner.card.rows.reduce(
-        (accRow, curRow) => (
-            console.log(curRow),
+        (accRow, curRow) =>
             accRow +
-                curRow
-                    .filter((square) => !square.marked)
-                    .map((s) => s.value)
-                    .reduce((acc, cur) => acc + cur, 0)
-        ),
+            curRow
+                .filter((square) => !square.marked)
+                .map((s) => s.value)
+                .reduce((acc, cur) => acc + cur, 0),
         0
     );
 
