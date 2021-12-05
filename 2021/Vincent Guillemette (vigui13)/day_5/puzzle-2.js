@@ -14,19 +14,12 @@ convertInput(__dirname, (x) => ({
         (axis) =>
             lines
                 .map((l) => Math.max(l.p1[axis], l.p2[axis]))
-                .sort((a, b) => (a > b ? 1 : a < b ? -1 : 0))
-                .reverse()[0] + 1
+                .sort((a, b) => (a > b ? -1 : a < b ? 1 : 0))[0] + 1
     );
 
-    board = [];
-
-    for (let index = 0; index < boardHeight; index++) {
-        board.push([]);
-
-        for (let index = 0; index < boardWidth; index++) {
-            board[board.length - 1].push(0);
-        }
-    }
+    board = new Array(boardHeight)
+        .fill(undefined)
+        .map((_) => new Array(boardWidth).fill(undefined).map((_) => 0));
 
     lines.forEach((l) => {
         if (l.p1.y === l.p2.y) {
@@ -44,8 +37,10 @@ convertInput(__dirname, (x) => ({
                 board[minY + index][l.p1.x]++;
             }
         } else {
-            const p1 = l.p1.x < l.p2.x ? l.p1 : l.p2;
-            const p2 = l.p1.x < l.p2.x ? l.p2 : l.p1;
+            const { p1, p2 } =
+                l.p1.x < l.p2.x
+                    ? { p1: l.p1, p2: l.p2 }
+                    : { p1: l.p2, p2: l.p1 };
 
             const stepY = p1.y < p2.y ? 1 : -1;
 

@@ -14,19 +14,12 @@ convertInput(__dirname, (x) => ({
         (axis) =>
             lines
                 .map((l) => Math.max(l.p1[axis], l.p2[axis]))
-                .sort((a, b) => (a > b ? 1 : a < b ? -1 : 0))
-                .reverse()[0] + 1
+                .sort((a, b) => (a > b ? -1 : a < b ? 1 : 0))[0] + 1
     );
 
-    board = [];
-
-    for (let index = 0; index < boardHeight; index++) {
-        board.push([]);
-
-        for (let index = 0; index < boardWidth; index++) {
-            board[board.length - 1].push(0);
-        }
-    }
+    board = new Array(boardHeight)
+        .fill(undefined)
+        .map((_) => new Array(boardWidth).fill(undefined).map((_) => 0));
 
     lines.forEach((l) => {
         if (l.p1.y === l.p2.y) {
