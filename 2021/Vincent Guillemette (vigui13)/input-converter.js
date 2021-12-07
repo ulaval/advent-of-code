@@ -4,7 +4,11 @@ const readline = require('readline');
 const path = require('path');
 const fs = require('fs');
 
-const convertInput = (inputDir, converter = (x) => x) => {
+const convertInput = (
+    inputDir,
+    elementConverter = (x) => x,
+    arrayConverter = (x) => x
+) => {
     return new Promise((res) => {
         const readInterface = readline.createInterface({
             input: fs.createReadStream(path.join(inputDir, 'input.txt')),
@@ -13,8 +17,8 @@ const convertInput = (inputDir, converter = (x) => x) => {
         const input = [];
 
         readInterface
-            .on('line', (line) => input.push(converter(line)))
-            .on('close', () => res(input));
+            .on('line', (line) => input.push(elementConverter(line)))
+            .on('close', () => res(arrayConverter(input)));
     });
 };
 
