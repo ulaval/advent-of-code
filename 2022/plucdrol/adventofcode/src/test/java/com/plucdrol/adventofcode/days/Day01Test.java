@@ -1,9 +1,13 @@
-package com.patate.poil;
+package com.plucdrol.adventofcode.days;
 
-import java.util.Arrays;
+import com.plucdrol.adventofcode.days.Day01;
 
 import org.junit.jupiter.api.Test;
 
+import lombok.extern.java.Log;
+import static org.assertj.core.api.Assertions.assertThat;
+
+@Log
 public class Day01Test {
 
     private static final String INPUT_TEST = """
@@ -47,18 +51,10 @@ public class Day01Test {
 
     @Test
     void doTheBartman() {
-        var groupesValeurs = INPUT_TEST.split("\n\n");
+        var day01 = new Day01(INPUT_TEST);
 
-        var sommes = Arrays.stream(groupesValeurs).map(this::calculerSomme).sorted().toList();
-
-        var top3 = sommes.subList(sommes.size() - 3, sommes.size());
-
-        var reponse1 = top3.get(top3.size() - 1);
-        var reponse2 = top3.stream().mapToInt(Integer::intValue).sum();
-    }
-
-    private int calculerSomme(String groupe) {
-        String[] valeurs = groupe.split("\n");
-        return Arrays.stream(valeurs).mapToInt(Integer::parseInt).sum();
+        log.info(day01.toString());
+        assertThat(day01.getReponse1()).isPositive();
+        assertThat(day01.getReponse2()).isPositive();
     }
 }
