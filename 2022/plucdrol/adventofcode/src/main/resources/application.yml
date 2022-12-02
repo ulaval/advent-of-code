@@ -1,1 +1,2 @@
-
+spring.profiles.active: default
+logging.pattern.console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
