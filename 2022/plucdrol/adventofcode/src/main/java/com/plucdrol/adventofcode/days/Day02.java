@@ -1,8 +1,8 @@
 package com.plucdrol.adventofcode.days;
 
-import java.util.Arrays;
-
 import lombok.Getter;
+
+import java.util.Arrays;
 
 @Getter
 public class Day02 {
@@ -27,9 +27,9 @@ public class Day02 {
 
     private String getChoix(String code) {
         return switch (code) {
-            case "A", "X" ->  "✊";
-            case "B", "Y" ->  "🤚";
-            case "C", "Z" ->  "✌";
+            case "A", "X" -> "✊";
+            case "B", "Y" -> "🤚";
+            case "C", "Z" -> "✌";
             default -> throw new IllegalStateException("Unexpected value: " + code);
         };
     }

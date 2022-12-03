@@ -1,8 +1,8 @@
 package com.plucdrol.adventofcode.days;
 
-import java.util.Arrays;
-
 import lombok.Data;
+
+import java.util.Arrays;
 
 @Data
 public class Day01 {

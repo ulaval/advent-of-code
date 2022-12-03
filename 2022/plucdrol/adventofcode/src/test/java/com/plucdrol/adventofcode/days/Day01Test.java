@@ -1,10 +1,8 @@
 package com.plucdrol.adventofcode.days;
 
-import com.plucdrol.adventofcode.days.Day01;
-
+import lombok.extern.java.Log;
 import org.junit.jupiter.api.Test;
 
-import lombok.extern.java.Log;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @Log
@@ -20,7 +18,7 @@ public class Day01Test {
             1671
                         
             45637
-            
+                        
             5634
             2755
             3537
