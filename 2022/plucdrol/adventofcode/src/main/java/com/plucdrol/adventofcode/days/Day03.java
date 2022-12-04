@@ -1,26 +1,26 @@
 package com.plucdrol.adventofcode.days;
 
-import lombok.Data;
 import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-@Data
-public class Day03 {
+@Getter
+public class Day03 extends Day {
 
     private static final String PRIORITIES = "0abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-    private final int reponse1;
-    private final int reponse2;
+    private final long answer1;
+    private final long answer2;
 
-    public Day03(String inputTest) {
-        var lines = inputTest.split("\n");
+    public Day03(String input) {
+        super(3);
+        var lines = input.split("\n");
 
         var rucksacks = Arrays.stream(lines).map(Rucksack::new).toList();
 
-        reponse1 = rucksacks.stream()
+        answer1 = rucksacks.stream()
                 .mapToInt(rucksack -> getPriority(rucksack.getRepeatedItem()))
                 .sum();
 
@@ -29,7 +29,7 @@ public class Day03 {
             rucksackSets.add(new RucksackSet(rucksacks.get(i), rucksacks.get(i + 1), rucksacks.get(i + 2)));
         }
 
-        reponse2 = rucksackSets.stream()
+        answer2 = rucksackSets.stream()
                 .map(RucksackSet::getRepeatedItem)
                 .mapToInt(this::getPriority).sum();
     }
@@ -44,26 +44,21 @@ public class Day03 {
         throw new RuntimeException(String.format("Priority not found (char: %s)", c));
     }
 
-    @Override
-    public String toString() {
-        return String.format("Reponse 1: '%s'; Reponse 2: '%s'", reponse1, reponse2);
-    }
-
     @Getter
     static class Compartment {
 
-        private final List<Character> itemsDistincts;
+        private final List<Character> distinctItems;
 
         public Compartment(String items) {
-            itemsDistincts = items.chars().distinct().mapToObj(c -> (char) c).toList();
+            distinctItems = items.chars().distinct().mapToObj(c -> (char) c).toList();
         }
 
         public List<Character> getSameItems(Compartment other) {
-            return getSameItems(other.itemsDistincts);
+            return getSameItems(other.distinctItems);
         }
 
         public List<Character> getSameItems(List<Character> other) {
-            return itemsDistincts.stream().filter(other::contains).toList();
+            return distinctItems.stream().filter(other::contains).toList();
         }
     }
 
@@ -79,8 +74,8 @@ public class Day03 {
             compartment1 = new Compartment(source.substring(0, source.length() / 2));
             compartment2 = new Compartment(source.substring(source.length() / 2));
 
-            repeatedItem = compartment1.getItemsDistincts().stream()
-                    .filter(c -> compartment2.getItemsDistincts().contains(c))
+            repeatedItem = compartment1.getDistinctItems().stream()
+                    .filter(c -> compartment2.getDistinctItems().contains(c))
                     .findFirst()
                     .orElseThrow(() -> new RuntimeException(String.format("Source: '%s'", source)));
         }

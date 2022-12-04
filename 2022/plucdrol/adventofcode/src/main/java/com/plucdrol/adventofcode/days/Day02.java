@@ -5,27 +5,28 @@ import lombok.Getter;
 import java.util.Arrays;
 
 @Getter
-public class Day02 {
+public class Day02 extends Day {
 
-    private final int reponse1;
-    private final int reponse2;
+    private final long answer1;
+    private final long answer2;
 
     public Day02(String input) {
-        var parties = input.split("\n");
+        super(2);
+        var games = input.split("\n");
 
-        reponse1 = Arrays.stream(parties).mapToInt(this::getScore1).sum();
-        reponse2 = Arrays.stream(parties).mapToInt(this::getScore2).sum();
+        answer1 = Arrays.stream(games).mapToInt(this::getScore1).sum();
+        answer2 = Arrays.stream(games).mapToInt(this::getScore2).sum();
     }
 
-    private int getScore1(String partie) {
-        var partieSplit = partie.split(" ");
-        var choixOpponent = getChoix(partieSplit[0]);
-        var monChoix = getChoix(partieSplit[1]);
+    private int getScore1(String game) {
+        var gameSplit = game.split(" ");
+        var opponentChoice = getChoice(gameSplit[0]);
+        var myChoice = getChoice(gameSplit[1]);
 
-        return scorePartie(choixOpponent, monChoix) + valeurChoix(monChoix);
+        return gameScore(opponentChoice, myChoice) + choiceValue(myChoice);
     }
 
-    private String getChoix(String code) {
+    private String getChoice(String code) {
         return switch (code) {
             case "A", "X" -> "✊";
             case "B", "Y" -> "🤚";
@@ -34,29 +35,29 @@ public class Day02 {
         };
     }
 
-    private int scorePartie(String opponent, String me) {
-        Integer resultat = switch (opponent) {
+    private int gameScore(String opponent, String me) {
+        var result = switch (opponent) {
             case "✊" -> me.equals("🤚") ? 6 : null;
             case "🤚" -> me.equals("✌") ? 6 : null;
             case "✌" -> me.equals("✊") ? 6 : null;
             default -> throw new IllegalStateException("Unexpected value: " + opponent);
         };
-        if (resultat == null) {
-            resultat = opponent.equals(me) ? 3 : 0;
+        if (result == null) {
+            return opponent.equals(me) ? 3 : 0;
         }
-        return resultat;
+        return result;
     }
 
-    private int getScore2(String partie) {
-        var partieSplit = partie.split(" ");
-        var choixOpponent = getChoix(partieSplit[0]);
-        var monChoix = getMonChoix(choixOpponent, partieSplit[1]);
+    private int getScore2(String game) {
+        var gameSplit = game.split(" ");
+        var opponentChoice = getChoice(gameSplit[0]);
+        var myChoice = getMyChoice(opponentChoice, gameSplit[1]);
 
-        return scorePartie(choixOpponent, monChoix) + valeurChoix(monChoix);
+        return gameScore(opponentChoice, myChoice) + choiceValue(myChoice);
     }
 
-    private String getMonChoix(String choixOpponent, String code) {
-        return switch (choixOpponent) {
+    private String getMyChoice(String choiceOpponent, String code) {
+        return switch (choiceOpponent) {
             case "✊" -> switch (code) {
                 case "X" -> "✌";
                 case "Y" -> "✊";
@@ -75,22 +76,16 @@ public class Day02 {
                 case "Z" -> "✊";
                 default -> throw new IllegalStateException("Unexpected value: " + code);
             };
-            default -> throw new IllegalStateException("Unexpected value: " + choixOpponent);
+            default -> throw new IllegalStateException("Unexpected value: " + choiceOpponent);
         };
     }
 
-    private int valeurChoix(String choix) {
-        return switch (choix) {
+    private int choiceValue(String choice) {
+        return switch (choice) {
             case "✊" -> 1;
             case "🤚" -> 2;
             case "✌" -> 3;
-            default -> throw new IllegalStateException("Unexpected value: " + choix);
+            default -> throw new IllegalStateException("Unexpected value: " + choice);
         };
     }
-
-    @Override
-    public String toString() {
-        return String.format("Reponse 1: '%s'; Reponse 2: '%s'", reponse1, reponse2);
-    }
-
 }

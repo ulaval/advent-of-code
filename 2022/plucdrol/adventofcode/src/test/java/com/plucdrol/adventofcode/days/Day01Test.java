@@ -52,7 +52,7 @@ public class Day01Test {
         var day01 = new Day01(INPUT_TEST);
 
         log.info(day01.toString());
-        assertThat(day01.getReponse1()).isPositive();
-        assertThat(day01.getReponse2()).isPositive();
+        assertThat(day01.getAnswer1()).isPositive();
+        assertThat(day01.getAnswer2()).isPositive();
     }
 }
