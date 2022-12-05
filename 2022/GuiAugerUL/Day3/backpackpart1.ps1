@@ -8,7 +8,7 @@ foreach($line in (Get-Content -Path ".\input.txt")) {
         if($fin.Contains($zeChar))
         {
             $charInt = [byte]$zeChar
-            if($charInt -gt 97) {$charInt -= 96}
+            if($charInt -ge 97) {$charInt -= 96}
             else {$charInt -= 38}
 
             $total += $charInt
