@@ -1,32 +1,28 @@
 package com.plucdrol.adventofcode.days;
 
+import lombok.Getter;
+
 import java.util.Arrays;
 
-import lombok.Data;
+@Getter
+public class Day01 extends Day {
 
-@Data
-public class Day01 {
-
-    private final int reponse1;
-    private final int reponse2;
+    private final Long answer1;
+    private final Long answer2;
 
     public Day01(String input) {
-        var groupesValeurs = input.split("\n\n");
-        var sommes = Arrays.stream(groupesValeurs).map(this::calculerSomme).sorted().toList();
+        super(1);
+        var valueGroups = input.split("\n\n");
+        var sums = Arrays.stream(valueGroups).map(this::calculateSum).sorted().toList();
 
-        var top3 = sommes.subList(sommes.size() - 3, sommes.size());
+        var top3 = sums.subList(sums.size() - 3, sums.size());
 
-        reponse1 = top3.get(top3.size() - 1);
-        reponse2 = top3.stream().mapToInt(Integer::intValue).sum();
+        answer1 = (long) top3.get(top3.size() - 1);
+        answer2 = (long) top3.stream().mapToInt(Integer::intValue).sum();
     }
 
-    private int calculerSomme(String groupe) {
-        String[] valeurs = groupe.split("\n");
-        return Arrays.stream(valeurs).mapToInt(Integer::parseInt).sum();
-    }
-
-    @Override
-    public String toString() {
-        return String.format("Reponse 1: '%s'; Reponse 2: '%s'", reponse1, reponse2);
+    private int calculateSum(String group) {
+        String[] values = group.split("\n");
+        return Arrays.stream(values).mapToInt(Integer::parseInt).sum();
     }
 }

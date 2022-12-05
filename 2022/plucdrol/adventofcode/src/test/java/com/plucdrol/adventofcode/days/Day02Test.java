@@ -16,8 +16,8 @@ public class Day02Test {
     void doTheBartman() {
         var day02 = new Day02(INPUT_TEST);
 
-        assertThat(day02.getReponse1()).isEqualTo(15);
-        assertThat(day02.getReponse2()).isEqualTo(12);
+        assertThat(day02.getAnswer1()).isEqualTo(15);
+        assertThat(day02.getAnswer2()).isEqualTo(12);
     }
 
 }
