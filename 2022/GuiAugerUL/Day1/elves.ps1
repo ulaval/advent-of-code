@@ -5,7 +5,7 @@ $CurrentCal = 0
 $lineNb = 0
 $CalByElf = @()
 
-foreach($line in (Get-Content -Path ".\Day1.1\elves.txt")) {
+foreach($line in (Get-Content -Path ".\elves.txt")) {
     $lineNb++
     if($line -gt 0) {
         $currentCal += $line
