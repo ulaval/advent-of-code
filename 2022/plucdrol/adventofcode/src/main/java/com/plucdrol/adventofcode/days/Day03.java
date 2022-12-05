@@ -11,8 +11,8 @@ public class Day03 extends Day {
 
     private static final String PRIORITIES = "0abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-    private final long answer1;
-    private final long answer2;
+    private final Long answer1;
+    private final Long answer2;
 
     public Day03(String input) {
         super(3);
@@ -20,7 +20,7 @@ public class Day03 extends Day {
 
         var rucksacks = Arrays.stream(lines).map(Rucksack::new).toList();
 
-        answer1 = rucksacks.stream()
+        answer1 = (long) rucksacks.stream()
                 .mapToInt(rucksack -> getPriority(rucksack.getRepeatedItem()))
                 .sum();
 
@@ -29,7 +29,7 @@ public class Day03 extends Day {
             rucksackSets.add(new RucksackSet(rucksacks.get(i), rucksacks.get(i + 1), rucksacks.get(i + 2)));
         }
 
-        answer2 = rucksackSets.stream()
+        answer2 = (long) rucksackSets.stream()
                 .map(RucksackSet::getRepeatedItem)
                 .mapToInt(this::getPriority).sum();
     }

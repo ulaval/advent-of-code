@@ -16,7 +16,7 @@ public abstract class Day {
         return String.format("⭐ Day %s:\tAnswer 1: '%s';\tAnswer 2: '%s'", getNumber(), getAnswer1(), getAnswer2());
     }
 
-    public abstract long getAnswer1();
+    public abstract Object getAnswer1();
 
-    public abstract long getAnswer2();
+    public abstract Object getAnswer2();
 }

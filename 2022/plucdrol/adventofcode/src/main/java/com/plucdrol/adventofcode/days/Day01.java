@@ -7,8 +7,8 @@ import java.util.Arrays;
 @Getter
 public class Day01 extends Day {
 
-    private final long answer1;
-    private final long answer2;
+    private final Long answer1;
+    private final Long answer2;
 
     public Day01(String input) {
         super(1);
@@ -17,8 +17,8 @@ public class Day01 extends Day {
 
         var top3 = sums.subList(sums.size() - 3, sums.size());
 
-        answer1 = top3.get(top3.size() - 1);
-        answer2 = top3.stream().mapToInt(Integer::intValue).sum();
+        answer1 = (long) top3.get(top3.size() - 1);
+        answer2 = (long) top3.stream().mapToInt(Integer::intValue).sum();
     }
 
     private int calculateSum(String group) {
