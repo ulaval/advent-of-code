@@ -11,8 +11,8 @@ import java.util.stream.IntStream;
 @Getter
 public class Day04 extends Day {
 
-    private final long answer1;
-    private final long answer2;
+    private final Long answer1;
+    private final Long answer2;
 
     private final List<List<Elf>> elfGroups;
 
@@ -31,7 +31,6 @@ public class Day04 extends Day {
                 .filter(elves -> elves.get(0).hasAnySection(elves.get(1))
                         || elves.get(1).hasAnySection(elves.get(0)))
                 .count();
-        ;
     }
 
     @Getter

@@ -7,15 +7,15 @@ import java.util.Arrays;
 @Getter
 public class Day02 extends Day {
 
-    private final long answer1;
-    private final long answer2;
+    private final Long answer1;
+    private final Long answer2;
 
     public Day02(String input) {
         super(2);
         var games = input.split("\n");
 
-        answer1 = Arrays.stream(games).mapToInt(this::getScore1).sum();
-        answer2 = Arrays.stream(games).mapToInt(this::getScore2).sum();
+        answer1 = (long) Arrays.stream(games).mapToInt(this::getScore1).sum();
+        answer2 = (long) Arrays.stream(games).mapToInt(this::getScore2).sum();
     }
 
     private int getScore1(String game) {
