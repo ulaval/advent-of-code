@@ -22,6 +22,8 @@ public class DayFactory {
     Resource day04Input;
     @Value("classpath:days/day05")
     Resource day05Input;
+    @Value("classpath:days/day06")
+    Resource day06Input;
 
     public List<Day> createAllDays() {
         return List.of(
@@ -29,7 +31,8 @@ public class DayFactory {
                 new Day02(readFile(day02Input)),
                 new Day03(readFile(day03Input)),
                 new Day04(readFile(day04Input)),
-                new Day05(readFile(day05Input))
+                new Day05(readFile(day05Input)),
+                new Day06(readFile(day06Input))
         );
     }
 
