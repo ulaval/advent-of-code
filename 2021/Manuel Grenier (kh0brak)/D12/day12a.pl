@@ -5,7 +5,7 @@ use warnings;
 use Switch;
 use Data::Dumper;
 
-open(FILE, 'input.txt') or die;
+open(FILE, 'input2.txt') or die;
 my %links;
 my @paths;
 
@@ -23,6 +23,8 @@ while (<FILE>) {
 		push @{$links{$b}}, $a ;
 	}
 }
+
+say Dumper(\%links);
 
 explore('start','start');
 
