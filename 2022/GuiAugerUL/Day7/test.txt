@@ -1,0 +1,11 @@
+$ cd /
+$ ls
+dir csjncqmr
+dir fnfjhvsp
+dir mhfrct
+dir pgmgbfcl
+dir qcf
+dir wrsjr
+$ cd csjncqmr
+$ ls
+8827 vdrdm.pfj

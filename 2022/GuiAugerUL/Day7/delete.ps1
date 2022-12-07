@@ -1,0 +1,81 @@
+function New-Repertoire {
+    param (
+        [string]$Nom
+    )
+    $newRep = [PSCustomObject]@{
+        Nom = $Nom
+        Taille = 0
+        SousRep = @{}
+        Fichiers = @{}
+    }
+    return $newRep
+}
+
+$root = New-Repertoire -Nom "/"
+$breadcrumb = New-Object -TypeName System.Collections.Stack
+
+function New-Fichier {
+    param (
+        [int]$Taille,
+        [string]$Nom
+    )
+
+    if($currentdir.Fichiers.ContainsKey($nom)) {Write-Error "fichier déjà présent !!!!!! $Nom"}
+
+    $currentdir.Fichiers.add($nom,$taille)
+    $currentdir.Taille += $taille
+    foreach($repertoire in $breadcrumb) {
+        $repertoire.Taille += $taille
+    }
+}
+
+foreach($line in (Get-Content -Path ".\input.txt")) {
+    $zeSplit = $line.Split()
+
+    if(($zeSplit[0] + $zeSplit[1]) -eq '$cd') {
+
+        switch ($zeSplit[2]) {
+            ".." { $currentdir = $breadcrumb.Pop() }
+            "/" { 
+                $currentdir = $root
+                $breadcrumb.Clear()
+            }
+            Default {
+                $breadcrumb.Push($currentdir)
+                $currentdir = $currentdir.SousRep[$zeSplit[2]]
+            }
+        }
+    }
+    elseif($zeSplit[0] -ne "$") {
+        switch ($zeSplit[0]) {
+            "dir" { $currentdir.SousRep.Add($zeSplit[1], (New-Repertoire -Nom $zeSplit[1])) }
+            Default {
+                New-Fichier -Nom $zeSplit[1] -Taille $zeSplit[0]
+                Write-Host $root.Taille
+            }
+        }
+    }
+}
+
+
+$TailleMinimum = 30000000 - (70000000 - $root.Taille)
+
+function Get-RepMinimum {
+    param (
+        $leRep
+    )
+    
+    $RepMin = 700000000
+    if($leRep.Taille -ge $TailleMinimum) {
+        $RepMin = $leRep.Taille
+        Write-Host "$($leRep.Taille) $($leRep.Nom)"
+        foreach($autreRep in $leRep.SousRep.Keys) {
+            $tempSousRep = Get-RepMinimum -leRep $leRep.SousRep[$autreRep]
+            if($tempSousRep -lt $RepMin) {$RepMin = $tempSousRep}
+        }
+    }
+
+    return $RepMin
+}
+
+$zeMinimum = Get-RepMinimum -leRep $root
