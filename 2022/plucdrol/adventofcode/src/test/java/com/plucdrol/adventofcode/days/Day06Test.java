@@ -1,19 +1,19 @@
 package com.plucdrol.adventofcode.days;
 
-import java.util.List;
-
 import org.junit.jupiter.api.Test;
+
+import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class Day06Test {
 
     private static final List<String> INPUT_TEST = List.of(
-        "mjqjpqmgbljsphdztnvjfqwrcgsmlb",
-        "bvwbjplbgvbhsrlpgdmjqwftvncz",
-        "nppdvjthqldpwncqszvftbrmjlhg",
-        "nznrnfrfntjfmvfwmzdfjlvtqnbhcprsg",
-        "zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw"
+            "mjqjpqmgbljsphdztnvjfqwrcgsmlb",
+            "bvwbjplbgvbhsrlpgdmjqwftvncz",
+            "nppdvjthqldpwncqszvftbrmjlhg",
+            "nznrnfrfntjfmvfwmzdfjlvtqnbhcprsg",
+            "zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw"
     );
 
     @Test

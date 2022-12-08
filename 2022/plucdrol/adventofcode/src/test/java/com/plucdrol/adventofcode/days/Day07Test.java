@@ -37,5 +37,6 @@ public class Day07Test {
         var day = new Day07(INPUT_TEST);
 
         assertThat(day.getAnswer1()).isEqualTo(95437);
+        assertThat(day.getAnswer2()).isEqualTo(24933642);
     }
 }
