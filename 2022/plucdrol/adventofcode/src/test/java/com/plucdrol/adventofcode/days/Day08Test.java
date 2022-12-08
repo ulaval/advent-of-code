@@ -19,5 +19,6 @@ public class Day08Test {
         var day = new Day08(INPUT_TEST);
 
         assertThat(day.getAnswer1()).isEqualTo(21);
+        assertThat(day.getAnswer2()).isEqualTo(8);
     }
 }
