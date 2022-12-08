@@ -1,8 +1,8 @@
 package com.plucdrol.adventofcode.days;
 
-import java.util.ArrayList;
-
 import lombok.Getter;
+
+import java.util.ArrayList;
 
 @Getter
 public class Day06 extends Day {

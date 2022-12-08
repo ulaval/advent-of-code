@@ -1,0 +1,42 @@
+package com.plucdrol.adventofcode.days;
+
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+public class Day07Test {
+
+    private static final String INPUT_TEST = """
+            $ cd /
+            $ ls
+            dir a
+            14848514 b.txt
+            8504156 c.dat
+            dir d
+            $ cd a
+            $ ls
+            dir e
+            29116 f
+            2557 g
+            62596 h.lst
+            $ cd e
+            $ ls
+            584 i
+            $ cd ..
+            $ cd ..
+            $ cd d
+            $ ls
+            4060174 j
+            8033020 d.log
+            5626152 d.ext
+            7214296 k
+            """;
+
+    @Test
+    void doTheBartman() {
+        var day = new Day07(INPUT_TEST);
+
+        assertThat(day.getAnswer1()).isEqualTo(95437);
+        assertThat(day.getAnswer2()).isEqualTo(24933642);
+    }
+}
